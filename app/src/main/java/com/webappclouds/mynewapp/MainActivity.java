@@ -23,5 +23,15 @@ public class MainActivity extends Activity {
                 }
             }
         );
+
+        myButton.setOnLongClickListener(
+            new Button.OnLongClickListener(){
+                public boolean onLongClick(View v){
+                    TextView myText = findViewById(R.id.myText);
+                    myText.setText("Long button press");
+                    return true;
+                }
+            }
+        );
     }
 }
