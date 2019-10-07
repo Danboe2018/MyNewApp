@@ -22,6 +22,12 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     }
 
     @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        this.gestureDetector.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
         myMessage.setText("SingleTapConfirmed");
         return false;
@@ -29,47 +35,47 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
     @Override
     public boolean onDoubleTap(MotionEvent e) {
-        myMessage.setText("SingleTapConfirmed");
+        myMessage.setText("DoubleTap");
         return false;
     }
 
     @Override
     public boolean onDoubleTapEvent(MotionEvent e) {
-        myMessage.setText("SingleTapConfirmed");
+        myMessage.setText("DoubleTapEvent");
         return false;
     }
 
     @Override
     public boolean onDown(MotionEvent e) {
-        myMessage.setText("SingleTapConfirmed");
+        myMessage.setText("onDown");
         return false;
     }
 
     @Override
     public void onShowPress(MotionEvent e) {
-        myMessage.setText("SingleTapConfirmed");
+        myMessage.setText("onShowPress");
     }
 
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
-        myMessage.setText("SingleTapConfirmed");
+        myMessage.setText("onSingleTapUp");
         return false;
     }
 
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-        myMessage.setText("SingleTapConfirmed");
+        myMessage.setText("Scroll");
         return false;
     }
 
     @Override
     public void onLongPress(MotionEvent e) {
-        myMessage.setText("SingleTapConfirmed");
+        myMessage.setText("LongPress");
     }
 
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-        myMessage.setText("SingleTapConfirmed");
+        myMessage.setText("onFling");
         return false;
     }
 }
