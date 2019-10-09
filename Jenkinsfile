@@ -1,11 +1,11 @@
 pipeline {
-    agent any
-
+    agent {
+        label 'android'
+    }
     stages {
         stage('clean') {
             steps { 
                 echo 'Cleaning..'
-                sh 'chmod +x ./gradlew'
                 sh './gradlew clean'
             }
         }
@@ -23,6 +23,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                archiveArtifacts '**/*.apk'
             }
         }
     }
